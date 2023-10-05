@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- VUE 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="./js/script.js" defer></script>
+
+    <title>DISKS</title>
+</head>
+
+</html>
+
+<body data-bs-theme="dark">
+    <div id="app">
+        <div class="container">
+            <header>
+                <h1 class="text-center mt-4">DISKS</h1>
+            </header>
+            <main>
+                <div class="row justify-content-around align-items-center g-2 flex-wrap">
+                    <div v-for="(disk,index) in disks" :key="index" class="col-lg-4 col-md-6">
+                        <div class="card my-3">
+                            <img :src="disk.poster" class="card-img" alt="poster" />
+                            <div class="card-body text-center">
+                                <p class="mt-1 fw-bold">{{disk.title}}</p>
+                                <p class="mt-1 fw-bold">{{disk.author}}</p>
+                                <p class="mt-1">{{disk.genre}}</p>
+                                <p class="mt-1">{{disk.year}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
